@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 import pandas as pd
-df=pd.read_csv(r"movie_data.csv")
-data=pd.read_csv(r"movie_credits.csv")
+df=pd.read_csv(r"movie_credits.csv")
 
 app=FastAPI()
 
@@ -64,12 +63,12 @@ def productoras_exitosas( Productora: str ):
 
 @app.get('/get_director/{nombre_director}')
 def get_director(nombre_director:str):
-    dir=data['crew']
-    peli_lista=data['title'].tolist()
-    año_lista=data['release_year'].tolist()
-    retorno_lista=data['return'].tolist()
-    budget_lista=data['budget'].tolist()
-    revenue_lista=data['revenue'].tolist()
+    dir=df['crew']
+    peli_lista=df['title'].tolist()
+    año_lista=df['release_year'].tolist()
+    retorno_lista=df['return'].tolist()
+    budget_lista=df['budget'].tolist()
+    revenue_lista=df['revenue'].tolist()
     #creo listas de las columnas del dataframe que utilizare 
     nuevo=[]
     nuevo1=[]
