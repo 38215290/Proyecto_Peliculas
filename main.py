@@ -5,7 +5,7 @@ data=pd.read_csv(r"movie_credits.csv")
 
 app=FastAPI()
 
-@app.get("/")
+@app.get('/peliculas_idioma/{idioma}')
 def peliculas_idioma(idioma):
     lista=df['original_language'].tolist()
     cantidad=0
