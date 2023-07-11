@@ -66,7 +66,7 @@ def productoras_exitosas( Productora: str ) : Se ingresa la productora, entregan
 def get_director( nombre_director) : Se ingresa el nombre de un director que se encuentra dentro de un dataset debiendo devolver el éxito del mismo medido a través del retorno. Además, deberá devolver el nombre de cada película con la fecha de lanzamiento, retorno individual, costo y ganancia de la misma, en formato lista.
  
 
-Luego implementado  los conocimientos necesarios  de machine learning se debera realizo una funcion donde a partir de la entrada de una variable de una pelicula retornara 5 peliculas similares a esta :
+Luego implementando  los conocimientos necesarios  de machine learning se realizo una funcion donde a partir de la entrada de una variable de una pelicula retornara 5 peliculas similares a esta :
 
 def recomendacion( titulo) : Se ingresa el nombre de una pelicula y te recomienda las similares en una lista de 5 valores.
  
