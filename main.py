@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import pandas as pd
+from sklearn.metrics.pairwise import linear_kernel,cosine_similarity
 df=pd.read_csv(r"movie_credits.csv")
 
 app=FastAPI()
