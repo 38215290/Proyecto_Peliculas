@@ -100,4 +100,23 @@ def get_director(nombre_director:str):
         resultado.append(dict(zip(user_keys, user)))
     return(resultado)
 
-    
+@app.get('/recomendacion/{titulo}')
+def recomendacion(titulo:str):
+    #filtro el dataset debido al almacenamiento que demanda por eso se tomo en cuentas las peliculas con votos mayores a 100
+    filtro=df['vote_count']>100.0
+    smd = df[filtro]
+    peli=smd['title']
+    count = CountVectorizer(analyzer='word',min_df=0.0, stop_words='english')
+    count_matrix = count.fit_transform(peli)
+    item_features = count_matrix
+    cosine_sim = linear_kernel(item_features, item_features)
+    smd = smd.reset_index()
+    indices = pd.Series(df['title'].index, index=df['title'])
+    idx = indices[titulo]
+    sim_scores = list(enumerate(cosine_sim[idx]))
+    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+    sim_scores = sim_scores[1:31]
+    movie_indices = [i[0] for i in sim_scores]
+    resultado=peli.iloc[movie_indices].head(5)
+    resultado.to_dict()
+    return {'lista recomendada': resultado}
