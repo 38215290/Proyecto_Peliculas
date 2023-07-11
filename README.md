@@ -9,7 +9,7 @@ El siguiente proyecto muestra los pasos a seguir para implementar lo aprendido d
 
 ![image](https://github.com/38215290/proyect_1/assets/127343400/03a8653e-6d45-43a2-a21e-45f85e6f0214)
 
- en cada una de las etapas se tuvo en cuenta que el dataset deberia estar en condiciones para lograr levantar la API con las funciones requeridas :
+ En cada una de las etapas se tuvo en cuenta que el dataset deberia estar en condiciones para lograr levantar la API con las funciones requeridas :
 
  
  def peliculas_idioma( Idioma: str ) : Se ingresa un idioma (como están escritos en el dataset). Debe devolver la cantidad de películas producidas en ese idioma. 
@@ -32,7 +32,7 @@ def productoras_exitosas( Productora: str ) : Se ingresa la productora, entregan
                     Ejemplo de retorno: La productora Xha tenido un ingreso dex
 
 def get_director( nombre_director) : Se ingresa el nombre de un director que se encuentra dentro de un dataset debiendo devolver el éxito del mismo medido a través del retorno. Además, deberá devolver el nombre de cada película con la fecha de lanzamiento, retorno individual, costo y ganancia de la misma, en formato lista.
-
+ 
 
 Luego implementado  los conocimientos necesarios  de machine learning se debera realizo una funcion donde a partir de la entrada de una variable de una pelicula retornara 5 peliculas similares a esta :
 
