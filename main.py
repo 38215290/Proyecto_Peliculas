@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import pandas as pd
 from sklearn.metrics.pairwise import linear_kernel,cosine_similarity
+from sklearn.feature_extraction.text import CountVectorizer
 df=pd.read_csv(r"movie_credits.csv")
 
 app=FastAPI()
@@ -104,7 +105,7 @@ def get_director(nombre_director:str):
 @app.get('/recomendacion/{titulo}')
 def recomendacion(titulo:str):
     #filtro el dataset debido al almacenamiento que demanda por eso se tomo en cuentas las peliculas con votos mayores a 100
-    filtro=df['vote_count']>100.0
+    filtro=df['vote_count'] > 100.0
     smd = df[filtro]
     peli=smd['title']
     count = CountVectorizer(analyzer='word',min_df=0.0, stop_words='english')
